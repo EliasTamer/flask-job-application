@@ -68,9 +68,7 @@
               value="employed"
               required
             />
-            <label
-              class="btn btn-outline-secondary"
-              for="employed"
+            <label class="btn btn-outline-secondary" for="employed"
               >Employed</label
             >
 
@@ -111,6 +109,16 @@
           </div>
         </div>
         <button type="submit" class="btn btn-secondary">Submit</button>
+        {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+        <div>
+          {% for messages in messages %}
+          {{message}}
+          {% endfor %}
+        </div>
+
+        {% endif %}
+        {% endwith %}
       </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
